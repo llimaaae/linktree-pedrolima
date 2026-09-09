@@ -19,7 +19,7 @@
   --textcolor: black;
   --bg-url: url("./imagens minhas/fundobranco.jpg");
   --stroke-color: rgba(0, 0, 0, 0.445);
-  --surface-color: rgba(194, 194, 194, 0.363);
+  --surface-color: rgba(236, 235, 235, 0.7);
   --surface-color-holder: rgba(0, 0, 0, 0.123);
   --social-links-hover: rgba(0, 0, 0, 0.432);
   --switch-bg-url: url("./assets/assets/sun.svg");
@@ -101,7 +101,7 @@ body * {
 }
 
 .light #switch button {
-  background: white var(--switch-bg-url) no-repeat center;
+  background: rgb(255, 255, 255) var(--switch-bg-url) no-repeat center;
   background-size: 70%;
   right: 0;
   left: initial;
