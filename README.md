@@ -19,11 +19,11 @@ Linktree com minhas redes sociais. <br/>
 <br>
 
 <p align="center">
-  <img alt="projeto Links ligth" src=".github/preview.png" width="100%">
+  <img alt="projeto Links ligth" src=".github/previewdark.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="projeto Links dark" src=".github/preview2.png" width="100%">
+  <img alt="projeto Links dark" src=".github/previewlight.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
