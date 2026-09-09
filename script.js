@@ -7,10 +7,10 @@ function toggleMode() {
 
     if (html.classList.contains('light')){
 
-        img.setAttribute('src', './imagens minhas/Avatarfotonoespelho.png');
+        img.setAttribute('src', './imagens minhas/AvatarselfieCeu.png');
 
     } else {
-        img.setAttribute('src', './imagens minhas/Avatarselfiebanheiro.png');
+        img.setAttribute('src', './imagens minhas/Avatarfotonoespelho.png');
     }
 
 

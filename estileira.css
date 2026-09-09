@@ -6,7 +6,7 @@
 
 :root {
   --textcolor: white;
-  --bg-url: url("./imagens minhas/fundopreto3.jpg");
+  --bg-url: url("./imagens minhas/fundopretoDesktop.jpg");
   --stroke-color: rgba(255, 255, 255, 0.4);
   --surface-color: rgba(192, 192, 192, 0.123);
   --surface-color-holder: rgba(255, 255, 255, 0.445);
@@ -17,9 +17,9 @@
 
 .light {
   --textcolor: black;
-  --bg-url: url("./imagens minhas/fundobranco.jpg");
+  --bg-url: url("./imagens minhas/fundobrancoDesktop.jpg");
   --stroke-color: rgba(0, 0, 0, 0.445);
-  --surface-color: rgba(236, 235, 235, 0.7);
+  --surface-color: rgba(223, 221, 221, 0.568);
   --surface-color-holder: rgba(0, 0, 0, 0.123);
   --social-links-hover: rgba(0, 0, 0, 0.432);
   --switch-bg-url: url("./assets/assets/sun.svg");
@@ -37,6 +37,7 @@ html, body {
 
 body {
   background: var(--bg-url) no-repeat center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -188,4 +189,15 @@ ul li a:hover {
 #social_links ion-icon:hover {
   background-color: var(--social-links-hover);
   color: rgba(255, 255, 255, 0.55);
+}
+
+/*media queries*/
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url("./imagens minhas/fundopretoDesktop.jpg");
+    }
+
+    .light {
+        --bg-url: url("./imagens minhas/fundobrancoDesktop.jpg");
+    }
 }
