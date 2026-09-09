@@ -99,14 +99,19 @@ body * {
   top: 50%;
   left: 0;
   z-index: 1;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+
+  animation: slideOut 0.5s forwards;
 }
 
 .light #switch button {
   background: rgb(255, 255, 255) var(--switch-bg-url) no-repeat center;
   background-size: 70%;
-  right: 0;
-  left: initial;
+  animation: slideIn 0.5s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--surface-color-holder);
 }
 
 #switch span{
@@ -200,4 +205,23 @@ ul li a:hover {
     .light {
         --bg-url: url("./imagens minhas/fundobrancoDesktop.jpg");
     }
+}
+
+/*animation*/
+@keyframes slideIn{
+  from {
+    left: 0;
+  }
+  to {
+    left: 32px;
+  }
+}
+
+@keyframes slideOut{
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
