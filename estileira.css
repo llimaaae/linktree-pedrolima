@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --textcolor: white;
+  --bg-url: url("./imagens minhas/fundopreto3.jpg");
+  --stroke-color: rgba(255, 255, 255, 0.4);
+  --surface-color: rgba(192, 192, 192, 0.123);
+  --surface-color-holder: rgba(255, 255, 255, 0.445);
+  --social-links-hover: rgba(14, 14, 14, 0.384);
+  --switch-bg-url: url("./assets/assets/moon-stars.svg");
+  
+}
+
+.light {
+  --textcolor: black;
+  --bg-url: url("./imagens minhas/fundobranco.jpg");
+  --stroke-color: rgba(0, 0, 0, 0.445);
+  --surface-color: rgba(194, 194, 194, 0.363);
+  --surface-color-holder: rgba(0, 0, 0, 0.123);
+  --social-links-hover: rgba(0, 0, 0, 0.432);
+  --switch-bg-url: url("./assets/assets/sun.svg");
+}
+
+
+
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-url) no-repeat center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--textcolor);
+}
+
+
+#conteiner {
+
+    
+    width: 588px;
+    margin: 56px auto 0px;
+    padding: 0px 24px;
+
+}
+
+/*profile*/
+#profile {
+ 
+    text-align: center;
+    padding: 24px;
+ }
+
+#profile img {
+    
+    width: 112px;
+    
+}
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/*switch*/
+
+#switch {
+ 
+  position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: rgb(255, 255, 255) var(--switch-bg-url) no-repeat center;
+  background-size: 70%;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%)
+}
+
+.light #switch button {
+  background: white var(--switch-bg-url) no-repeat center;
+  background-size: 70%;
+  right: 0;
+  left: initial;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 240px;
+}
+
+/*links*/
+ul {
+  
+    list-style: none;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+}
+
+ul li a{
+  display: flex;
+
+  justify-content: center;
+  padding: 16px 24px;
+  align-items: center;
+
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 24px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  text-decoration: none;
+  font-weight: 500;
+
+  
+
+}
+/*mexer na cor qunado passa o mouse por cima*/
+ul li a:hover {
+  background-color: var(--surface-color-holder);
+  border: 1px solid var(--textcolor);
+}
+
+/*social links*/
+#social_links {
+
+    display: flex;
+    justify-content: center;
+    padding: 24px 0px;
+    font-size: 24px;
+}
+#social_links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  padding: 0;
+}
+
+/* estado base do ícone (evita salto quando hover) */
+#social_links ion-icon {
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px; /* aumenta o tamanho da bolinha */
+  border-radius: 50%;
+  
+}
+
+/* hover do social links */
+#social_links ion-icon:hover {
+  background-color: var(--social-links-hover);
+  color: rgba(255, 255, 255, 0.55);
+}
