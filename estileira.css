@@ -54,7 +54,6 @@ body {
     height: 104px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid var(--stroke-color);
 }
 
 #profile h1 {
