@@ -1,28 +1,20 @@
-function toggleMode() {
-    const html = document.documentElement;
-    html.classList.toggle('light');
-    
+// Animação de entrada dos cartões de projeto
+const cartoes = document.querySelectorAll('.projeto');
 
-    const img = document.querySelector('#profile img');
+if ('IntersectionObserver' in window) {
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada, i) => {
+            if (entrada.isIntersecting) {
+                setTimeout(() => entrada.target.classList.add('visivel'), i * 90);
+                observador.unobserve(entrada.target);
+            }
+        });
+    }, { threshold: 0.15 });
 
-    if (html.classList.contains('light')){
-
-        img.setAttribute('src', './imagens minhas/AvatarselfieCeu.png');
-
-    } else {
-        img.setAttribute('src', './imagens minhas/Avatarfotonoespelho.png');
-    }
-
-
-
-
-    /*
-      {
-        html.classList.remove('light');
-    } else {
-        html.classList.add('light');
-    }
-    */
-
-    
+    cartoes.forEach((cartao) => observador.observe(cartao));
+} else {
+    cartoes.forEach((cartao) => cartao.classList.add('visivel'));
 }
+
+const ano = document.getElementById('ano');
+if (ano) ano.textContent = new Date().getFullYear();

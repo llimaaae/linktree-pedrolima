@@ -1,3 +1,4 @@
+/* Portfólio Pedro Lima — tema escuro */
 * {
     margin: 0;
     padding: 0;
@@ -5,223 +6,272 @@
 }
 
 :root {
-  --textcolor: white;
-  --bg-url: url("./imagens minhas/fundopretoDesktop.jpg");
-  --stroke-color: rgba(255, 255, 255, 0.4);
-  --surface-color: rgba(192, 192, 192, 0.123);
-  --surface-color-holder: rgba(255, 255, 255, 0.445);
-  --social-links-hover: rgba(14, 14, 14, 0.384);
-  --switch-bg-url: url("./assets/assets/moon-stars.svg");
-  
+    --text-color: #f5f5f4;
+    --text-muted: rgba(245, 245, 244, 0.64);
+    --stroke-color: rgba(255, 255, 255, 0.14);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-hover: rgba(255, 255, 255, 0.1);
+    --icon-hover: rgba(14, 14, 14, 0.5);
+    --radius: 20px;
+    --font: "Inter", sans-serif;
 }
 
-.light {
-  --textcolor: black;
-  --bg-url: url("./imagens minhas/fundobrancoDesktop.jpg");
-  --stroke-color: rgba(0, 0, 0, 0.445);
-  --surface-color: rgba(223, 221, 221, 0.568);
-  --surface-color-holder: rgba(0, 0, 0, 0.123);
-  --social-links-hover: rgba(0, 0, 0, 0.432);
-  --switch-bg-url: url("./assets/assets/sun.svg");
+html {
+    scroll-behavior: smooth;
 }
 
-
-
-
-
-
-html, body {
-  height: 100%;
-  margin: 0;
+html,
+body {
+    min-height: 100%;
 }
 
 body {
-  background: var(--bg-url) no-repeat center/cover;
-  height: 100vh;
+    background:
+        linear-gradient(rgba(8, 9, 10, 0.55), rgba(8, 9, 10, 0.55)),
+        url("./imagens minhas/fundopretoDesktop.jpg") no-repeat center / cover fixed,
+        #0a0b0c;
+    font-family: var(--font);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
 }
-
-body * {
-  font-family: "Inter", sans-serif;
-  color: var(--textcolor);
-}
-
 
 #conteiner {
-
-    
     width: 100%;
-    max-width: 588px;
-    margin: 56px auto 0px;
-    padding: 0px 24px;
-
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px 0;
 }
 
-/*profile*/
+/* ---------- perfil ---------- */
 #profile {
- 
     text-align: center;
-    padding: 24px;
- }
+    max-width: 560px;
+    margin: 0 auto 56px;
+}
 
 #profile img {
-    
-    width: 112px;
-    
+    width: 104px;
+    height: 104px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--stroke-color);
 }
-#profile p {
+
+#profile h1 {
+    margin-top: 20px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.perfil-funcao {
+    margin-top: 6px;
+    font-size: 0.9rem;
     font-weight: 500;
-    line-height: 24px;
-    margin-top: 8px;
+    color: var(--text-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
-/*switch*/
-
-#switch {
- 
-  position: relative;
-    width: 64px;
-    margin: 4px auto;
-}
-#switch button{
-  width: 32px;
-  height: 32px;
-  background: rgb(255, 255, 255) var(--switch-bg-url) no-repeat center;
-  background-size: 70%;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 1;
-  transform: translateY(-50%);
-
-  animation: slideOut 0.5s forwards;
+.perfil-intro {
+    margin-top: 20px;
+    line-height: 1.7;
+    color: var(--text-muted);
 }
 
-.light #switch button {
-  background: rgb(255, 255, 255) var(--switch-bg-url) no-repeat center;
-  background-size: 70%;
-  animation: slideIn 0.5s forwards;
-}
-
-#switch button:hover {
-  outline: 8px solid var(--surface-color-holder);
-}
-
-#switch span{
-  display: block;
-  width: 64px;
-  height: 24px;
-  background-color: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 240px;
-}
-
-/*links*/
-ul {
-  
+/* ---------- projetos ---------- */
+#projetos {
     list-style: none;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.projeto a {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-ul li a{
-  display: flex;
-
-  justify-content: center;
-  padding: 16px 24px;
-  align-items: center;
-
-  background-color: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  border-radius: 24px;
-
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  
-  text-decoration: none;
-  font-weight: 500;
-
-  
-
-}
-/*mexer na cor qunado passa o mouse por cima*/
-ul li a:hover {
-  background-color: var(--surface-color-holder);
-  border: 1px solid var(--textcolor);
+.projeto a:hover,
+.projeto a:focus-visible {
+    background-color: var(--surface-hover);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
-/*social links*/
+.projeto figure {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid var(--stroke-color);
+}
+
+.projeto figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.projeto a:hover figure img,
+.projeto a:focus-visible figure img {
+    transform: scale(1.03);
+}
+
+.projeto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 24px 24px;
+}
+
+.projeto-tipo {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.projeto-info h2 {
+    font-size: 1.25rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+.projeto-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+.projeto-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 550;
+}
+
+.projeto-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.projeto a:hover .projeto-link svg,
+.projeto a:focus-visible .projeto-link svg {
+    transform: translate(3px, -3px);
+}
+
+/* ---------- rodapé ---------- */
+footer {
+    margin-top: 64px;
+    padding-bottom: 40px;
+}
+
 #social_links {
-
     display: flex;
     justify-content: center;
-    padding: 24px 0px;
-    font-size: 24px;
+    gap: 8px;
 }
+
 #social_links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 8px;
-  padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 50%;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* estado base do ícone (evita salto quando hover) */
-#social_links ion-icon {
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px; /* aumenta o tamanho da bolinha */
-  border-radius: 50%;
-  
+#social_links svg {
+    width: 22px;
+    height: 22px;
+    display: block;
 }
 
-/* hover do social links */
-#social_links ion-icon:hover {
-  background-color: var(--social-links-hover);
-  color: rgba(255, 255, 255, 0.55);
+#social_links a:hover,
+#social_links a:focus-visible {
+    background-color: var(--icon-hover);
+    color: rgba(255, 255, 255, 0.6);
 }
 
-/*media queries*/
-@media (min-width: 700px) {
-    :root {
-        --bg-url: url("./imagens minhas/fundopretoDesktop.jpg");
+#assinatura {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: rgba(245, 245, 244, 0.4);
+}
+
+/* ---------- acessibilidade ---------- */
+a:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 3px;
+}
+
+/* ---------- animação de entrada ---------- */
+.projeto {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.projeto.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .light {
-        --bg-url: url("./imagens minhas/fundobrancoDesktop.jpg");
+    .projeto {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .projeto a,
+    .projeto figure img,
+    .projeto-link svg,
+    #social_links a {
+        transition: none;
     }
 }
 
-/*animation*/
-@keyframes slideIn{
-  from {
-    left: 0;
-  }
-  to {
-    left: 32px;
-  }
-}
+/* ---------- responsivo ---------- */
+@media (max-width: 720px) {
+    #conteiner {
+        padding-top: 48px;
+    }
 
-@keyframes slideOut{
-  from {
-    left: 50%;
-  }
-  to {
-    left: 0;
-  }
+    #profile {
+        margin-bottom: 40px;
+    }
+
+    #projetos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    footer {
+        margin-top: 48px;
+    }
 }

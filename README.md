@@ -1,8 +1,8 @@
-<h1 align="center"> Links Limaae </h1>
+<h1 align="center"> Pedro Lima — Portfólio </h1>
 
 <p align="center">
-Linktree com minhas redes sociais. <br/>
-
+Portfólio pessoal de Pedro Lima, desenvolvedor web: projetos e redes sociais.<br/>
+Disponível em <a href="https://links-pedrolima.vercel.app/">links-pedrolima.vercel.app</a>.
 </p>
 
 <p align="center">
